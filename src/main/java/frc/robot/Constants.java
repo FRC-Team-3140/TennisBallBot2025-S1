@@ -18,5 +18,24 @@ public final class Constants {
     public final static int LEFT_LEADER = 2;
     public final static int RIGHT_FOLLOWER = 3;
     public final static int RIGHT_LEADER = 4;
+    
+    public final static int FLYWHEEL_LEFT = 5;
+    public final static int FLYWHEEL_RIGHT = 6;
+    public final static int ELEVATION_CONTROL = 7;
+    public final static int ROTATION_CONTROL = 8;
+    public final static int INTAKE_CONTROL = 9;
+  
+  }
+  public static class PwmIDs {
+    public final static int ROTATION_ENCODER = 1;
+    public final static int ELEVATION_ENCODER = 2;
+  }
+  public static class Limits {
+    public static class Turret {
+      public final static double ROTATION_MIN = 0;
+      public final static double ROTATION_MAX = 1;
+      public final static double ELEVEATION_MIN = 0;
+      public final static double ELEVATION_MAX = 1;
+    }
   }
 }
