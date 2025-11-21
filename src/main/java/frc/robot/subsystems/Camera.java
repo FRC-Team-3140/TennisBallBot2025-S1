@@ -7,6 +7,7 @@ package frc.robot.subsystems;
 import org.photonvision.targeting.PhotonTrackedTarget;
 import org.photonvision.PhotonCamera;
 
+import edu.wpi.first.math.geometry.Translation3d;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Camera extends SubsystemBase {
@@ -138,11 +139,12 @@ public class Camera extends SubsystemBase {
   }
 
   // Simple distance estimation from pitch angle (replace with your calibration)
-  private Double distToClosestTarget() {
+  public double distToClosestTarget() {
     PhotonTrackedTarget target = camera.getLatestResult().getBestTarget();
-    if (target == null) {
-      return null;
-    return target.get;
+    if (target == null) 
+      return -1;
+    // TODO: fix this, ioevno if this works
+    return target.getBestCameraToTarget().getTranslation().getDistance(new Translation3d());
   }
 
   public double[] relativeAngleToTarget(PhotonTrackedTarget target) {
@@ -156,5 +158,9 @@ public class Camera extends SubsystemBase {
     }
 
     return relativeAngleToTarget(lastTarget);
+  }
+  private double estimateDistance(double lastPitch) {
+    // TODO: implement dis
+    return 0;
   }
 }

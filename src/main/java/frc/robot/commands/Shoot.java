@@ -68,8 +68,8 @@ public class Shoot extends Command {
     // TODO: Gravity Estimate, feed error into PID, targeting 0.
 
     turret.setSpeeds(
-      horizontalPID.calculate(, 0),
-      verticalPID.calculate(, 0)
+      horizontalPID.calculate(1, 0),
+      verticalPID.calculate(1, 0)
     );
   }
 
